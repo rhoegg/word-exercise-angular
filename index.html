@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/foundation.min.css">
+    <link rel="stylesheet" href="hoegg-sample.css"/>
+</head>
+<body ng-app="hoegg-sample">
+  <div class="fixed">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">Ryan Hoegg Code Sample</a></h1>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div ng-controller="WordController">
+    <div class="large-12 columns">
+		<div class="small-12 columns">
+			<input type="text" placeholder="{{data.status}}" value="{{data.word}}" ng-readonly="data.disabled">
+		</div>
+		<div class="row">
+			<div class="small-6 columns">
+				<a href="#" ng-click="generateWord()" class="button prefix">Generate Word</a>
+			</div>
+			<div class="small-6 columns">
+				<a href="#" class="button prefix">Transform</a>
+			</div>
+		</div>
+    </div>
+  </div>
+	
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation/foundation.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation/foundation.topbar.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
+	
+	<script src="hoegg-sample.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+</body>
+</html>
