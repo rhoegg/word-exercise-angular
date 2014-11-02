@@ -16,10 +16,11 @@ angular.module("hoegg-sample", [])
 			$interval.cancel($scope.data.statusPromise);
 		}
 
-		$scope.data = {};
-		$scope.data.status = 'Well?';
-		$scope.data.disabled = false;
-		$scope.data.serverError = false;
+		$scope.data = {
+			status: 'Well?',
+			disabled: false,
+			serverError: false
+		};
 
 		$scope.generateWord = function() {
 			if ($scope.data.disabled) return;
