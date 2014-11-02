@@ -8,6 +8,11 @@ angular.module("hoegg-sample", [])
 				$scope.data.status += ".";
 			}, 1000);
 		}
+		
+		function stopWaiting() {
+			$scope.data.disabled = false;
+			$interval.cancel($scope.data.statusPromise);
+		}
 
 		$scope.data = {};
 		$scope.data.status = 'Well?';
@@ -15,14 +20,12 @@ angular.module("hoegg-sample", [])
 
 		$scope.generateWord = function() {
 			$http.get('http://oseberg.io/interview/word_generator.php')
-				.success(function(data, status, headers, config) {
+				.success(function(data) {
 					$scope.data.word = data;
-					$scope.data.disabled = false;
-					$interval.cancel($scope.data.statusPromise);
+					stopWaiting();
 				})
 				.error(function(data, status, headers, config) {
-					$scope.data.disabled = false;
-					$interval.cancel($scope.data.statusPromise);
+					stopWaiting();
 					$scope.data.status = 'Oops!';
 				});
 				beginWaiting('Please wait for word.');
@@ -30,14 +33,12 @@ angular.module("hoegg-sample", [])
 		
 		$scope.transformWord = function() {
 			$http.get('http://oseberg.io/interview/shifter.php', { params: { word: $scope.data.word } })
-				.success(function(data, status, headers, config) {
+				.success(function(data) {
 					$scope.data.word = data;
-					$scope.data.disabled = false;
-					$interval.cancel($scope.data.statusPromise);
+					stopWaiting();
 				})
 				.error(function(data, status, headers, config) {
-					$scope.data.disabled = false;
-					$interval.cancel($scope.data.statusPromise);
+					stopWaiting();
 					$scope.data.status = 'Oops!';
 				});
 			beginWaiting('Please wait for transformation.');
