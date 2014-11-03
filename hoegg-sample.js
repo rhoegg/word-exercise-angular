@@ -34,7 +34,7 @@ angular.module("hoegg-sample", [])
 					$scope.data.serverError = data;
 					$scope.data.word = $scope.data.previousWord;
 				});
-				beginWaiting('Please wait for word.');
+			beginWaiting('Please wait for word.');
 		};
 		
 		$scope.transformWord = function() {
