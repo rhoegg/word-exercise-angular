@@ -8,3 +8,5 @@ Coding exercise using AngularJS.
 * http://foundation.zurb.com/docs/
 * http://stackoverflow.com/questions/13759120/angularjs-referenceerror-http-is-not-defined
 * https://help.github.com/categories/github-pages-basics/
+* http://www.smashingmagazine.com/2014/10/07/introduction-to-unit-testing-in-angularjs/
+* http://chaijs.com/api/bdd/
